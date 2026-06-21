@@ -1,7 +1,7 @@
 # Digital Signature — Authenticity & Integrity in Practice
 
 A .NET 10 / C# 14 CLI application that simulates the cryptographic signing workflow described in the article
-**"Electronic Signatures: Authenticity & Integrity in Practice"** by Dirk Müller.
+**"Electronic Signatures: Authenticity & Integrity in Practice"** by Dirk Müller [1].
 
 > **Key insight:** Digital signatures are *not* encryption.
 > Encryption → Confidentiality | Signatures → Authenticity + Integrity
@@ -303,3 +303,6 @@ dotnet publish src/DigitalSignature.Cli -c Release -r win-x64 --self-contained -
 | Detects tampering | No | Yes |
 
 The EU's **eIDAS** regulation builds on this cryptographic core to define legally binding qualified electronic signatures.
+
+# References
+https://www.linkedin.com/pulse/electronic-signatures-authenticity-integrity-practice-dirk-ljgrf/?trackingId=i0iZtPpHTu6DpmuKgfxLGQ%3D%3D
