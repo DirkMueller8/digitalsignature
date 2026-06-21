@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DigitalSignature.Cli/DigitalSignature.Cli.csproj" />
+    <Project Path="src/DigitalSignature.Core/DigitalSignature.Core.csproj" />
+    <Project Path="src/DigitalSignature.Infrastructure/DigitalSignature.Infrastructure.csproj" />
+  </Folder>
+</Solution>

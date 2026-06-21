@@ -1,0 +1,13 @@
+# .NET build artifacts
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.nupkg
+
+# Demo-generated files (keys, signatures, documents — recreated by 'demo' each run)
+demo-output/
+
+# Publish output
+publish/
