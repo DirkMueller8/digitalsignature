@@ -27,7 +27,7 @@ public sealed class ConsoleWriter : IConsoleWriter
         Console.WriteLine();
         var line = new string('─', BoxWidth);
         WriteColored($"┌{line}┐", ConsoleColor.DarkCyan);
-        WriteColored($"│  {title.PadRight(BoxWidth - 1)}│", ConsoleColor.DarkCyan);
+        WriteColored($"│  {title.PadRight(BoxWidth - 2)}│", ConsoleColor.DarkCyan);
         WriteColored($"└{line}┘", ConsoleColor.DarkCyan);
     }
 
