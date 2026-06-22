@@ -10,7 +10,7 @@ A .NET 10 / C# 14 CLI application that simulates the cryptographic signing workf
 
 ## Architecture
 
-The solution follows a three-layer architecture based on the **Dependency Inversion Principle**: the inner layers define abstractions; outer layers implement them.
+The solution follows a three-layer architecture based on the **Dependency Inversion Principle** (DIP): the inner layers define abstractions; outer layers implement them. In this example, Core holds the abstraction (Interfaces) and Models. Core defines what a signer is (IDocumentSigner). Infrastructure defines how it is done (RsaDocumentSigner). Cli defines what uses it (DemoCommandHandler, SignCommandHandler). The arrow of dependency always points inward - never outward:
 
 ```mermaid
 graph TD
@@ -43,6 +43,7 @@ graph TD
     style Infra fill:#2d5a27,color:#fff
     style Cli  fill:#5a2d00,color:#fff
 ```
+In a traditional layered architecture, the UI depends on the service layer, which depends on the data layer — dependencies flow downward toward the infrastructure. DIP inverts this: the infrastructure depends on abstract contracts defined by the business core, so the core is shielded from all implementation details.
 
 ### SOLID responsibilities
 
@@ -78,6 +79,8 @@ No third-party crypto libraries are used. All cryptographic operations rely on t
 ## Digital Signature Workflow
 
 ### Signing (sender side)
+Alice - as sender - selects the document and calculates a hash value from it, using the cryptographic hash function H. She uses the private key and a signature algorithm to sign this hash, producing a signature σ. Finally she sends the document and σ to Bob.
+Note:  The document is never encrypted at any point.
 
 ```mermaid
 sequenceDiagram
@@ -97,6 +100,7 @@ sequenceDiagram
 ```
 
 ### Verification (recipient side)
+Bob - as recipient - recomputes the hash H(M) from the document and verifies σ using the Alice’s public key. If verification succeeds, the message (with the document) is accepted as authentic and unmodified (integer)
 
 ```mermaid
 sequenceDiagram

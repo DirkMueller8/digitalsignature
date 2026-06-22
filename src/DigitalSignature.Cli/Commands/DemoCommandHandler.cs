@@ -47,7 +47,6 @@ public sealed class DemoCommandHandler(
     private void WriteIntroduction()
     {
         writer.WriteHeader("DIGITAL SIGNATURE: AUTHENTICITY & INTEGRITY IN PRACTICE");
-        writer.WriteInfo("Based on the article by Dirk Müller");
         writer.WriteLine();
         writer.WriteWarning("KEY INSIGHT: Digital signatures are NOT encryption.");
         writer.WriteSeparator();
