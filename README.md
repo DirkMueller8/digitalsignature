@@ -1,7 +1,7 @@
 # Digital Signature — Authenticity & Integrity in Practice
 
-A .NET 10 / C# 14 CLI application that simulates the cryptographic signing workflow described in the article
-**"Electronic Signatures: Authenticity & Integrity in Practice"** by Dirk Müller [1].
+A .NET 10 / C# 14 CLI application that simulates the cryptographic signing workflow described in my article
+**"Electronic Signatures: Authenticity & Integrity in Practice"** [1].
 
 > **Key insight:** Digital signatures are *not* encryption.
 > Encryption → Confidentiality | Signatures → Authenticity + Integrity
@@ -13,7 +13,7 @@ A .NET 10 / C# 14 CLI application that simulates the cryptographic signing workf
 The solution follows a three-layer architecture based on the **Dependency Inversion Principle**: the inner layers define abstractions; outer layers implement them.
 
 ```mermaid
-graph LR
+graph TD
     subgraph Cli["DigitalSignature.Cli  (Console App)"]
         direction TB
         P[Program / App]
